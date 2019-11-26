@@ -7,7 +7,7 @@ import os
 import time
 
 class MyHandler(FileSystemEventHandler):
-	def on_modified(self, event):
+	def on_modified(self, event): #need to add an if statement to track what file extensions go where 
 		for filename in os.listdir(folder_to_track):
 			src = folder_to_track + "/" filename
 			newDestination = folderDestination + "/" filename
