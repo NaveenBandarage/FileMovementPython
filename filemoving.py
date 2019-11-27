@@ -1,5 +1,6 @@
-from watchdog.observer import observer
 from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
+
 #need to install these packages pip install watchdog
 
 import json 
@@ -9,18 +10,18 @@ import time
 class MyHandler(FileSystemEventHandler):
 	def on_modified(self, event): #need to add an if statement to track what file extensions go where 
 		for filename in os.listdir(folder_to_track):
-			src = folder_to_track + "/" filename
-			newDestination = folderDestination + "/" filename
+			src = folder_to_track + "/" + filename
+			newDestination = folderDestination + "/" + filename
 			os.rename(src, newDestination)
-folder_to_track = "/Users/naveenbandarage/Desktop/TestFolder"
-folderDestination = "/Users/naveenbandarage/Desktop/TestFolder"
+folder_to_track = "/Users/naveenbandarage/Desktop/FileMovementPython/TestFolder"
+folderDestination = "/Users/naveenbandarage/Desktop/FileMovementPython/TestFolder2"
 eventHandler = MyHandler()
-observer = Observer()
-observer.schedule(evenHandler, folder_to_track, recursive=True)
-observer.start()
+observering = Observer()
+observering.schedule(eventHandler, folder_to_track, recursive=True)
+observering.start()
 try: 
 	while True:
 		time.sleep(10)
-except KeyBoardInerrupt:
-	observer.stop()
-observer.join()
+except KeyboardInterrupt:
+	observering.stop()
+observering.join()
