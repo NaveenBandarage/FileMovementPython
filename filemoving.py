@@ -12,8 +12,8 @@ class MyHandler(FileSystemEventHandler):
 			src = folder_to_track + "/" filename
 			newDestination = folderDestination + "/" filename
 			os.rename(src, newDestination)
-folder_to_track = "/fileFolder initial destination"
-folderDestination = "/fileFolder where the file is going"
+folder_to_track = "/Users/naveenbandarage/Desktop/TestFolder"
+folderDestination = "/Users/naveenbandarage/Desktop/TestFolder"
 eventHandler = MyHandler()
 observer = Observer()
 observer.schedule(evenHandler, folder_to_track, recursive=True)
