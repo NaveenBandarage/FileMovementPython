@@ -6,7 +6,9 @@ import os
 import time
 import getpass
 
-#configured for mac os
+# configured for mac os
+
+
 def setup(user):
     if not os.path.exists("/Users/" + user + "/Downloads/Photos"):
         os.mkdir("/Users/" + user + "/Downloads/Photos")
@@ -28,11 +30,11 @@ class MyHandler(FileSystemEventHandler):
                 src = folder_to_track + "/" + filename
                 newDestination = folder_destination_photos + "/" + filename
                 os.rename(src, newDestination)
-            elif extension in {'.doc', '.xls', '.pdf', 'txt', '.docx', '.xlsx'}:
+            elif extension in {'.doc', '.xls', '.pdf', 'txt', '.docx', '.xlsx', '.ppt', '.odt'}:
                 src = folder_to_track + "/" + filename
                 newDestination = folder_destination_documents + "/" + filename
                 os.rename(src, newDestination)
-            elif extension in {'.mp3', '.wav', '.mp4'}:
+            elif extension in {'.mp3', '.wav', '.mp4', '.flac', '.FLP', '.aacc'}:
                 src = folder_to_track + "/" + filename
                 newDestination = folder_destination_music + "/" + filename
                 os.rename(src, newDestination)
