@@ -1,7 +1,6 @@
 # FileMovementPython
 
-Exploring more python this time I am looking at moving files between folders and trying to automate this processs.
-
+This is a simple script that is for removing and deleting files. At the moment I believe its configured for mac os. Would like a universal approach that could work irregardless of operating system. 
 
 
 ## Contributers
