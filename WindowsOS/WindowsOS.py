@@ -158,6 +158,7 @@ extensions_folders = {
 
 
 def Cleaner():
+    """ """
     for filename in os.listdir(folder_to_track):
         i = 1
         if filename not in ["desktop.ini", "automations"]:
