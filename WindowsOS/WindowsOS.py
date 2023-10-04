@@ -167,8 +167,7 @@ def Cleaner():
                 extension = "noname"
                 try:
                     extension = str(
-                        os.path.splitext(folder_to_track + "/" + filename)[1]
-                    )
+                        os.path.splitext(folder_to_track + "/" + filename)[1])
                 except Exception:
                     extension = "noname"
 
@@ -176,18 +175,17 @@ def Cleaner():
                 if not os.path.exists(folder_destination_path):
                     os.makedirs(folder_destination_path)
 
-                file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
+                file_exists = os.path.isfile(folder_destination_path + "/" +
+                                             new_name)
                 while file_exists:
                     i += 1
                     new_name = (
-                        os.path.splitext(folder_to_track + "/" + filename)[0]
-                        + str(i)
-                        + os.path.splitext(folder_to_track + "/" + filename)[1]
-                    )
+                        os.path.splitext(folder_to_track + "/" + filename)[0] +
+                        str(i) +
+                        os.path.splitext(folder_to_track + "/" + filename)[1])
                     new_name = new_name.split("/")[4]
-                    file_exists = os.path.isfile(
-                        folder_destination_path + "/" + new_name
-                    )
+                    file_exists = os.path.isfile(folder_destination_path +
+                                                 "/" + new_name)
                 src = folder_to_track + "/" + filename
 
                 new_name = folder_destination_path + "/" + new_name
